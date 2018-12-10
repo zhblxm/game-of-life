@@ -15,12 +15,18 @@ import org.springframework.web.servlet.ModelAndView;
 public class HomePageController {
     @RequestMapping("/")
     public ModelAndView index() {
-        return new ModelAndView("home");
+        TestLombok  ddd=  TestLombok.builder().namm("aa").build();
+        ModelAndView modelAndView=new ModelAndView("home");
+        modelAndView.addObject("name",ddd.getNamm());
+        return modelAndView;
     }
 
 	// Clicking the "home" text loads the main page
     @RequestMapping("/home")
     public ModelAndView home() {
-        return new ModelAndView("home");
+        TestLombok  ddd=  TestLombok.builder().namm("aaBB").build();
+        ModelAndView modelAndView=new ModelAndView("home");
+        modelAndView.addObject("name",ddd.getNamm());
+        return modelAndView;
     }
 }
